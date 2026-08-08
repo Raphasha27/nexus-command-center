@@ -1,0 +1,9 @@
+/* Add this to globals.css — spin animation for lucide Loader2 icon */
+.spin-icon {
+  animation: spin 0.7s linear infinite;
+}
+
+/* Mono shorthand used in table */
+.mono {
+  font-family: 'JetBrains Mono', monospace;
+}
