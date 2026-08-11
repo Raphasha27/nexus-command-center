@@ -1,11 +1,12 @@
 "use client";
+import { useState, useEffect } from "react";
 import {
   AreaChart, Area, BarChart, Bar, LineChart, Line,
   XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, PieChart, Pie, Cell, Legend
 } from "recharts";
 import { TrendingUp, GitBranch, ShieldCheck, BarChart2, ExternalLink } from "lucide-react";
 
-const ciTrend = [
+const initialCiTrend = [
   { day: "Mon", pass: 44, fail: 3 },
   { day: "Tue", pass: 48, fail: 2 },
   { day: "Wed", pass: 46, fail: 5 },
@@ -28,7 +29,7 @@ const langDist = [
   { name: "Shell",      value: 1,  color: "hsl(148,72%,48%)" },
 ];
 
-const secTrend = [
+const initialSecTrend = [
   { day: "Mon", alerts: 12 }, { day: "Tue", alerts: 9 },
   { day: "Wed", alerts: 7 },  { day: "Thu", alerts: 5 },
   { day: "Fri", alerts: 4 },  { day: "Sat", alerts: 4 }, { day: "Sun", alerts: 4 },
@@ -59,6 +60,24 @@ const CustomTooltip = ({ active, payload, label }: Record<string, unknown>) => {
 };
 
 export default function AnalyticsPage() {
+  const [ciTrend, setCiTrend] = useState(initialCiTrend);
+  const [secTrend, setSecTrend] = useState(initialSecTrend);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCiTrend(prev => prev.map(p => ({
+        ...p,
+        pass: p.pass + (Math.random() > 0.7 ? (Math.random() > 0.5 ? 1 : -1) : 0),
+        fail: p.fail + (Math.random() > 0.85 ? (Math.random() > 0.5 ? 1 : -1) : 0)
+      })));
+      setSecTrend(prev => prev.map(p => ({
+        ...p,
+        alerts: Math.max(0, p.alerts + (Math.random() > 0.8 ? (Math.random() > 0.5 ? 1 : -1) : 0))
+      })));
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
       <header className="topbar">

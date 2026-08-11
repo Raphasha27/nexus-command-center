@@ -3,7 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   LayoutDashboard, GitBranch, ShieldCheck, Bot, FolderGit2,
-  BarChart2, Bell, ScrollText, Settings, ChevronRight, Hexagon, LogOut
+  BarChart2, Bell, ScrollText, Settings, ChevronRight, Hexagon, LogOut, Blocks
 } from "lucide-react";
 
 const nav = [
@@ -16,9 +16,10 @@ const nav = [
 ];
 
 const tools = [
-  { href: "/alerts",   icon: Bell,       label: "Alerts",       badge: "7" },
-  { href: "/activity", icon: ScrollText, label: "Activity Log",  badge: null },
-  { href: "/settings", icon: Settings,   label: "Settings",      badge: null },
+  { href: "/alerts",       icon: Bell,       label: "Alerts",       badge: "7" },
+  { href: "/integrations", icon: Blocks,     label: "Integrations", badge: null },
+  { href: "/activity",     icon: ScrollText, label: "Activity Log", badge: null },
+  { href: "/settings",     icon: Settings,   label: "Settings",     badge: null },
 ];
 
 export default function Sidebar() {
