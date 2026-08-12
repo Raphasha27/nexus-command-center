@@ -1,5 +1,8 @@
 # Nexus Command Center
 
+> **Live Now:** [https://nexus-command-center-wine.vercel.app](https://nexus-command-center-wine.vercel.app)
+> Run it instantly — no setup needed. Free-tier hosted build by Kirov Dynamics.
+
 Organization-wide DevOps dashboard for **Raphasha27** — real-time GitHub repository monitoring, CI/CD pipeline tracking, security analytics, and one-click DevOps automation.
 
 ![Stack](https://img.shields.io/badge/Next.js%2016-111827?logo=nextdotjs&logoColor=white)
@@ -60,6 +63,7 @@ src/
 ## 📄 License
 
 Private — © Raphasha27
+<<<<<<< Updated upstream
 
 ## Contributors
 
@@ -71,3 +75,5 @@ Built and maintained by the **Kirov Dynamics** team:
 - [LindiweMotaung](https://github.com/LindiweMotaung) — Collaborator
 
 We build together — credit goes to the whole team, not one person.
+=======
+>>>>>>> Stashed changes
