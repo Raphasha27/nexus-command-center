@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
       
     
-      <script dangerouslySetInnerHTML={{ __html: \<!--KDT_WIDGET_INJECTED-->
+      <script dangerouslySetInnerHTML={{ __html: `<!--KDT_WIDGET_INJECTED-->
 (function () {
   if (window.__KDT_BRAND__) return;
   window.__KDT_BRAND__ = true;
